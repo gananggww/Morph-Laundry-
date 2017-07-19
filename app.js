@@ -1,3 +1,4 @@
+
 const express = require("express")
 const app = express()
 const path = require("path")
@@ -7,9 +8,15 @@ app.set("view engine", "ejs")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
+
 let stuffRoute = require("./router/stuffRouter")
-
-
 app.use("/stuff", stuffRoute)
 
-app.listen(3000)
+const clients = require('./router/clientRouter')
+app.use('/client', clients);
+
+const detailOrders = require('./router/detailOrder')
+app.use('/detailorder', detailOrders)
+
+app.listen(3000);
+

@@ -19,4 +19,3 @@ const detailOrders = require('./router/detailOrder')
 app.use('/detailorder', detailOrders)
 
 app.listen(3000);
-

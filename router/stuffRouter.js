@@ -1,10 +1,10 @@
 
 const express = require("express")
 const router = express.Router()
-let db = require ("../models")
+let database = require ("../models")
 
 router.get("/", function(req, res){
-  db.Stuff.findAll({
+  database.Stuff.findAll({
     order:[["id"]]
   })
     .then(data => {
@@ -17,7 +17,7 @@ router.get("/add", function(req, res){
 })
 
 router.post("/add", function(req, res){
-  db.Stuff.create({
+  database.Stuff.create({
     type : req.body.type,
     price : req.body.price,
     createdAt : new Date(),
@@ -29,14 +29,14 @@ router.post("/add", function(req, res){
 })
 
 router.get("/edit/:id", function(req, res){
-  db.Stuff.findById(req.params.id)
+  database.Stuff.findById(req.params.id)
   .then(data => {
       res.render("stuffEditForm", {dataStuff: data})
   })
 })
 
 router.post("/edit/:id", function(req, res){
-  db.Stuff.update({
+  database.Stuff.update({
     type : req.body.type,
     price : req.body.price,
     createdAt : new Date(),
@@ -53,7 +53,7 @@ router.post("/edit/:id", function(req, res){
 })
 
 router.get("/delete/:id", function(req, res){
-  db.Stuff.destroy({
+  database.Stuff.destroy({
     where : {
       id : req.params.id
     }

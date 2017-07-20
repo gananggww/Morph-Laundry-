@@ -11,7 +11,7 @@
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
-      width: 70%;
+      width: 50%;
     }
 
     td,
@@ -29,7 +29,7 @@
 
 <body>
   <center>
-    <h1>Laundry Price List</h1><br>
+    <h1>Order</h1><br>
     <form action="" method="POST">
       <br><br>
       <table>
@@ -38,6 +38,7 @@
           <th>Type</th>
           <th>Price</th>
           <th>Check</th>
+          <th>Quantity</th>
         </tr>
 
         <tr>
@@ -45,13 +46,13 @@
           <td>Baju</td>
           <td>2000</td>
 
-          <td><input type="checkbox" name="vehicle" value="sempak">Pilih
-            <td>
+          <td><input type="checkbox" name="vehicle" value="sempak" class="btn btn-default"></td>
+          <td><input  placeholder="Jumlah...." name="type"></td>
         </tr>
 
       </table>
       <br><br>
-      <input type="submit" class="btn btn-primary" name="" value="sempak"></input>
+      <input type="submit" class="btn btn-primary" name="" value="Order"></input>
     </form>
   </center>
 </body>

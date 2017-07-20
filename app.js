@@ -18,4 +18,7 @@ app.use('/client', clients);
 const detailOrders = require('./router/detailOrder')
 app.use('/detailorder', detailOrders)
 
+const users = require('./router/userRouter')
+app.use('/user', users)
+
 app.listen(3000);

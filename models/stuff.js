@@ -3,12 +3,13 @@ module.exports = function(sequelize, DataTypes) {
   var Stuff = sequelize.define('Stuff', {
     type: DataTypes.STRING,
     price: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Stuff.associate = (models) =>{
+    // User.hasMany(models.Teacher);
+    Stuff.belongsToMany(models.User,{
+      through: models.detailOrder, foreignKey: 'stuffId'});
+    }
+
   return Stuff;
 };

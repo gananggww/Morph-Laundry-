@@ -62,5 +62,8 @@ router.get('/delete/:id', function(req, res){
   })
 })
 
+router.get("/detail", function(req,res){
+  res.render("detailOrder")
+})
 
 module.exports = router

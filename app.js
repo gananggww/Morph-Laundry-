@@ -21,4 +21,7 @@ app.use('/detailorder', detailOrders)
 const users = require('./router/userRouter')
 app.use('/user', users)
 
+const index = require('./router/indexRouter')
+app.use("/",index)
+
 app.listen(3000);

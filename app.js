@@ -8,8 +8,7 @@ app.set("view engine", "ejs")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
-
-let stuffRoute = require("./router/stuffRouter")
+const stuffRoute = require("./router/stuffRouter")
 app.use("/stuff", stuffRoute)
 
 const clients = require('./router/clientRouter')
@@ -24,4 +23,7 @@ app.use('/user', users)
 const index = require('./router/indexRouter')
 app.use("/",index)
 
-app.listen(3000);
+const admin = require("./router/adminRouter")
+app.use("/admin", admin)
+
+app.listen(3900);

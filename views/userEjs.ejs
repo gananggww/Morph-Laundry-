@@ -10,13 +10,13 @@
       table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 90%;
+        width: 50%;
       }
 
       td,
       th {
         border: 1px solid #dddddd;
-        text-align: left;
+        text-align: center;
         padding: 8px;
       }
 
@@ -28,8 +28,8 @@
   </head>
 
   <body>
-  <center><h3>User Profile</h3><center><br>
-  <a href=""><button type="Submit" name="Add">Log Out</button></a>
+  <center><h1>User Profile</h1><center><br>
+  <a href=""><button type="Submit" class="btn btn-danger" name="Add">Log Out</button></a>
   <br><br>
   <form action="/client" method="POST">
   <center>
@@ -40,7 +40,9 @@
       <th><center>Phone</center></th>
       <th><center>Alamat</center></th>
       <th><center>Email<center></th>
-      <th><center>Option</center></th>
+      <th><center>Edit Profile</center></th>
+      <th><center>Order</center></th>
+      <th><center>Detail Order</center></th>
     </tr>
 
     <tr>
@@ -49,10 +51,10 @@
       <td></td>
       <td></td>
       <td></td>
-      <td><a href="/user/order"><button type="button" name="Edit">Order</button></a></td>
-      <td><a href="/user/orderdetail"><button type="button" name="Edit">Order Detail</button></a></td>
-      <td><a href=""><button type="button" name="Edit">EDIT</button></a></td>
-      </tr>
+      <td><a href="user/edit"><button type="button" class="btn btn-warning" name="Edit">EDIT</button></a></td>
+      <td><a href="/user/order"><button type="button" class="btn btn-primary" name="Edit">Order</button></a></td>
+      <td><a href="/user/orderdetail"><button type="button" class="btn btn-success" name="Edit">Order Detail</button></a></td>
+    </tr>
 
     </table>
   </center>

@@ -16,7 +16,7 @@
       td,
       th {
         border: 1px solid #dddddd;
-        text-align: left;
+        text-align: center;
         padding: 8px;
       }
 
@@ -40,20 +40,20 @@
       <th><center>Phone</center></th>
       <th><center>Alamat</center></th>
       <th><center>Email<center></th>
-      <th><center>Option</center></th>
+      <th colspan="3"><center>Option</center></th>
     </tr>
-
+<% userData.forEach(data =>{ %>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><a href="/user/order"><button type="button" name="Edit">Order</button></a></td>
-      <td><a href="/user/orderdetail"><button type="button" name="Edit">Order Detail</button></a></td>
+      <td><%=data.id%></td>
+      <td><%=data.nama%></td>
+      <td><%=data.telp%></td>
+      <td><%=data.alamat%></td>
+      <td><%=data.email%></td>
+      <td><a href="/user/order/<%=data.id%>"><button type="button" name="Edit">Order</button></a></td>
+      <td><a href="/user/review"><button type="button" name="Edit">Order Detail</button></a></td>
       <td><a href=""><button type="button" name="Edit">EDIT</button></a></td>
       </tr>
-
+<%  }) %>
     </table>
   </center>
     </form>

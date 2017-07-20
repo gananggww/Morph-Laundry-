@@ -28,29 +28,37 @@
   </head>
 
   <body>
-  <center><h3>User Detail Order</h3><center><br>
-  <a href="/client/add"><button type="Submit" name="Add">Add New Client</button></a>
-  <a href=""><button type="Submit" name="Add">Log Out</button></a>
+  <center><h3>Detail Order</h3><center><br>
+
   <br><br>
   <form action="/detailorder" method="POST">
   <center>
-  <table>
-    <tr>
-      <th><center>ID</center></th>
-      <th><center>Client ID</center></th>
-      <th><center>Client Name</center></th>
-      <th><center>Clothes</center></th>
-      <th><center>Quantity</center></th>
-      <th><center>Option</center></th>
-    </tr>
-    <tr>
-      <td>Cuma data ejs</td>
-      <td>Cuma data ejs</td>
-      <td>Cuma data ejs</td>
-      <td>Cuma data ejs</td>
-      <td>Cuma data ejs</td>
-      <td><a href=""><button type="button" name="Edit">EDIT</button></a></td>
+
+    <table>
+      <tr>
+
+        <th>Stuff</th>
+        <th>Quantity</th>
+        <th>Price/pcs</th>
+        <th>Total</th>
+
+
       </tr>
+      <% var totalSemua = 0%>
+      <%allData.forEach(data =>{%>
+      <tr>
+
+          <td><%=data.Stuff.type%></td>
+          <td><%=data.quantity%></td>
+          <td><%=data.Stuff.price%></td>
+          <td><%=data.quantity * data.Stuff.price%></td>
+          <%var a = data.quantity * data.Stuff.price%>
+          <%totalSemua += a %>
+
+      </tr>
+      <%})%>
+      <td colspan="6" ><p align='right'>IDR <%=totalSemua%></p></td>
+
     </table>
   </center>
     </form>

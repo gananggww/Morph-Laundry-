@@ -29,6 +29,7 @@
 
   <body>
   <center><h1>User Profile</h1><center><br>
+  <a href="/user/add"><button type="Submit" class="btn btn-danger" name="Add">Add New User</button></a>
   <a href=""><button type="Submit" class="btn btn-danger" name="Add">Log Out</button></a>
   <br><br>
   <form action="/client" method="POST">
@@ -52,9 +53,10 @@
       <td><%=data.telp%></td>
       <td><%=data.alamat%></td>
       <td><%=data.email%></td>
+      <td><a href="/user/edit/<%=data.id%>"><button type="button" name="Edit">EDIT</button></a></td>
       <td><a href="/user/order/<%=data.id%>"><button type="button" name="Edit">Order</button></a></td>
       <td><a href="/user/review"><button type="button" name="Edit">Order Detail</button></a></td>
-      <td><a href=""><button type="button" name="Edit">EDIT</button></a></td>
+      <td><a href="/user/delete/<%=data.id%>"><button type="button" name="Edit">DELETE</button></a></td>
       </tr>
 <%  }) %>
     </table>

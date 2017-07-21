@@ -67,17 +67,14 @@ router.get('/delete/:id', function(req, res){
 //order form
 router.get('/order/:id', function(req, res){
   database.Stuff.findAll()
-  .then((dataStuff)=>{
-    database.detailOrder.findAll({
-      where:{userId:req.params.id},
-      attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
-      include:[{all:true}]
-    })
-    .then((data)=>{
-      database.Stuff.findAll()
-      .then((dataStuff)=>{
-        res.render('orderStuff', {allData:data, user:req.params.id, allStuff:dataStuff});
+    .then((dataStuff)=>{
+      database.detailOrder.findAll({
+        where:{userId:req.params.id},
+        attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
+        include:[{all:true}]
       })
+      .then((data)=>{
+      res.render('orderStuff', {allData:data, user:req.params.id, allStuff:dataStuff});
     })
   })
 })

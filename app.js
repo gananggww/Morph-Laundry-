@@ -31,4 +31,4 @@ app.use("/",index)
 const admin = require("./router/adminRouter")
 app.use("/admin", admin)
 
-app.listen(process.env.PORT||3000);
+app.listen(process.env.PORT || 3000);

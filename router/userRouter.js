@@ -66,15 +66,14 @@ router.get('/delete/:id', function(req, res){
 //------------MVP--------------//
 //order form
 router.get('/order/:id', function(req, res){
-  database.detailOrder.findAll({
-    where:{userId:req.params.id},
-    attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
-    include:[{all:true}]
-
-  })
-  .then((data)=>{
-    database.Stuff.findAll()
+  database.Stuff.findAll()
     .then((dataStuff)=>{
+      database.detailOrder.findAll({
+        where:{userId:req.params.id},
+        attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
+        include:[{all:true}]
+      })
+      .then((data)=>{
       res.render('orderStuff', {allData:data, user:req.params.id, allStuff:dataStuff});
     })
   })
@@ -96,7 +95,7 @@ router.post('/order/:id', function(req, res){
   })
 })
 //delete order
-router.get('/delete/:id', function(req,res){
+router.get('/detail/delete/:id', function(req,res){
   database.detailOrder.destroy({where:{id:req.params.id}})
   .then(()=>{
     res.redirect(`/user/order/${req.params.id}`)

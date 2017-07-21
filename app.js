@@ -9,13 +9,18 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
 const stuffRoute = require("./router/stuffRouter")
-app.use("/stuff", stuffRoute)
+app.use("/admin/stuff", stuffRoute)
 
-const clients = require('./router/clientRouter')
-app.use('/client', clients);
+// const clients = require('./router/clientRouter')
+// app.use('/client', clients);
+const listRoute = require("./router/listRouter")
+app.use("/admin/listuser", listRoute)
+
+const listDetailRoute = require("./router/listDetail")
+app.use("/admin/listuser", listDetailRoute)
 
 const detailOrders = require('./router/detailOrder')
-app.use('/detailorder', detailOrders)
+app.use('/user/detailorder', detailOrders)
 
 const users = require('./router/userRouter')
 app.use('/user', users)
@@ -26,4 +31,4 @@ app.use("/",index)
 const admin = require("./router/adminRouter")
 app.use("/admin", admin)
 
-app.listen(3000);
+app.listen(3900);

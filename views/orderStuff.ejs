@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,6 +36,7 @@
     <form action="/user/order/<%=user%>" method="POST">
       <br><br>
       <!-- TABLE -->
+
       <table>
         <tr>
           <th>Id</th>
@@ -57,13 +60,13 @@
             <td><a href="/user/detail/delete/<%=data.id%>">Hapus</a></td>
         </tr>
         <%})%>
-        <td colspan="6" ><p align='right'><%=totalSemua%></p></td>
-
+        <td colspan="4"><p align="center"><b>Total</b></p></td>
+        <td><p align='center'><b><%=totalSemua%></b></p></td>
       </table>
       <!-- DROP DOWN -->
       <br><br>
       Pakaian:<br>
-      <select name="typeStuff">
+      <select name="typeStuff"  >
         <% allStuff.forEach(data =>{%>
         <option value="<%=data.id%>"><%=data.type%></option>
         <%})%>

@@ -24,7 +24,7 @@ router.post("/add", function(req, res){
     updatedAt : new Date()
   })
   .then(() => {
-    res.redirect("/stuff")
+    res.redirect("/admin/stuff")
   })
 })
 
@@ -48,7 +48,7 @@ router.post("/edit/:id", function(req, res){
     }
   })
   .then(()=> {
-    res.redirect("/stuff")
+    res.redirect("/admin/stuff")
   })
 })
 
@@ -61,11 +61,10 @@ router.get("/delete/:id", function(req, res){
   .then(()=>{
     database.detailOrder.destroy({
       where:{
-        stuffId:req.params.id
+        stuffId: req.param.id
       }
-    })
-    .then(()=>{
-      res.redirect("/stuff")
+    }).then(()=>{
+      res.redirect("/admin/stuff")
     })
   })
 })

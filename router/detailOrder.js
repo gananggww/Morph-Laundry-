@@ -17,7 +17,6 @@ router.get('/:id', function(req, res){
     where:{userId:req.params.id},
     attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
     include:[{all:true}]
-
   })
   .then((data)=>{
     database.Stuff.findAll()

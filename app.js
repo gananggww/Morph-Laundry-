@@ -16,8 +16,11 @@ app.use("/admin/stuff", stuffRoute)
 const listRoute = require("./router/listRouter")
 app.use("/admin/listuser", listRoute)
 
+const listDetailRoute = require("./router/listDetail")
+app.use("/admin/listuser", listDetailRoute)
+
 const detailOrders = require('./router/detailOrder')
-app.use('/detailorder', detailOrders)
+app.use('/user/detailorder', detailOrders)
 
 const users = require('./router/userRouter')
 app.use('/user', users)

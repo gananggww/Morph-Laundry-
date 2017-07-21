@@ -59,7 +59,13 @@ router.get("/delete/:id", function(req, res){
     }
   })
   .then(()=>{
-    res.redirect("/admin/stuff")
+    database.detailOrder.destroy({
+      where:{
+        stuffId: req.param.id
+      }
+    }).then(()=>{
+      res.redirect("/admin/stuff")
+    })
   })
 })
 

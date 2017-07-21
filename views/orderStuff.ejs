@@ -36,6 +36,7 @@
     <form action="/user/order/<%=user%>" method="POST">
       <br><br>
       <!-- TABLE -->
+
       <table>
         <tr>
           <th>Id</th>
@@ -56,7 +57,7 @@
             <td><%=data.quantity * data.Stuff.price%></td>
             <%var a = data.quantity * data.Stuff.price%>
             <%totalSemua += a %>
-            <td><a href="/user/delete/<%=data.id%>">Hapus</a></td>
+            <td><a href="/user/detail/delete/<%=data.id%>">Hapus</a></td>
         </tr>
         <%})%>
         <td colspan="4"><p align="center"><b>Total</b></p></td>

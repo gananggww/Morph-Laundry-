@@ -22,7 +22,7 @@ router.get('/:id', function(req, res){
   .then((data)=>{
     database.Stuff.findAll()
     .then((dataStuff)=>{
-      res.render('detailOrder', {allData:data, user:req.params.id, allStuff:dataStuff});
+      res.render('listDetail', {allData:data, user:req.params.id, allStuff:dataStuff});
     })
   })
 })

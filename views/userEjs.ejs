@@ -23,14 +23,14 @@
         background-color: #dddddd;
       }
     </style>
-  <title>Client</title>
+  <title>User</title>
   </head>
   <body>
   <center><h1>User Profile</h1><center><br>
-  <a href="/user/add"><button type="Submit" class="btn btn-danger" name="Add">Add New User</button></a>
+  <a href="/user/add"><button type="Submit" class="btn btn-primary" name="Add">Add New User</button></a>
   <a href=""><button type="Submit" class="btn btn-danger" name="Add">Log Out</button></a>
   <br><br>
-  <form action="/client" method="POST">
+  <form action="/user" method="POST">
   <center>
   <table>
     <tr>
@@ -53,8 +53,9 @@
       <td><%=data.email%></td>
       <td><a href="/user/edit/<%=data.id%>"><button type="button" class="btn btn-warning" name="Edit">EDIT</button></a></td>
       <td><a href="/user/order/<%=data.id%>"><button type="button" class="btn btn-primary" name="Edit">Order</button></a></td>
-      <td><a href="/user/review/<%=data.id%>"><button type="button" class="btn btn-success" name="Edit">Detail</button></a></td>
-      <td><a href="/user/delete/<%=data.id%>"><button type="button" class="btn btn-warning" name="Edit">Delete</button></a></td>
+      <td><a href="/user/detailorder/<%=data.id%>"><button type="button" class="btn btn-success" name="Edit">Detail</button></a></td>
+      <td><a href="/user/delete/<%=data.id%>"><button type="button" class="btn btn-danger" name="Edit">Delete</button></a></td>
+
       </tr>
 <%  }) %>
     </table>

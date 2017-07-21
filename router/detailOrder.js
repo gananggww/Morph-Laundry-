@@ -3,12 +3,27 @@ var router = express.Router()
 const database = require('../models/')
 
 //show table detail order
-router.get('/', function(req,res){
+// router.get('/', function(req,res){
+//   database.detailOrder.findAll({
+//     order:[['id']]
+//   })
+//   .then((result) =>{
+//     res.render('detailOrder', {dataDetailOrder:result})
+//   })
+// })
+
+router.get('/:id', function(req, res){
   database.detailOrder.findAll({
-    order:[['id']]
+    where:{userId:req.params.id},
+    attributes:['id','clientId', 'stuffId', 'createdAt', 'updatedAt' ,'quantity', 'userId'],
+    include:[{all:true}]
+
   })
-  .then((result) =>{
-    res.render('detailOrder', {dataDetailOrder:result})
+  .then((data)=>{
+    database.Stuff.findAll()
+    .then((dataStuff)=>{
+      res.render('detailOrder', {allData:data, user:req.params.id, allStuff:dataStuff});
+    })
   })
 })
 

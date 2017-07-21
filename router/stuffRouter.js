@@ -24,7 +24,7 @@ router.post("/add", function(req, res){
     updatedAt : new Date()
   })
   .then(() => {
-    res.redirect("/stuff")
+    res.redirect("/admin/stuff")
   })
 })
 
@@ -48,7 +48,7 @@ router.post("/edit/:id", function(req, res){
     }
   })
   .then(()=> {
-    res.redirect("/stuff")
+    res.redirect("/admin/stuff")
   })
 })
 
@@ -59,7 +59,7 @@ router.get("/delete/:id", function(req, res){
     }
   })
   .then(()=>{
-    res.redirect("/stuff")
+    res.redirect("/admin/stuff")
   })
 })
 

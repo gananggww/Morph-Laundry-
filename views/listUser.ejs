@@ -13,24 +13,25 @@
         border-collapse: collapse;
         width: 50%;
       }
+
       td,
       th {
         border: 1px solid #dddddd;
         text-align: center;
         padding: 8px;
       }
+
       tr:nth-child(even) {
         background-color: #dddddd;
       }
     </style>
-  <title>Client</title>
+  <title>List User</title>
   </head>
   <body>
-  <center><h1>User Profile</h1><center><br>
-  <a href="/user/add"><button type="Submit" class="btn btn-danger" name="Add">Add New User</button></a>
-  <a href=""><button type="Submit" class="btn btn-danger" name="Add">Log Out</button></a>
+    <br><br>
+  <center><h1>List User</h1><center><br>
   <br><br>
-  <form action="/client" method="POST">
+  <form action="/admin/listuser" method="POST">
   <center>
   <table>
     <tr>
@@ -39,10 +40,8 @@
       <th><center>Phone</center></th>
       <th><center>Alamat</center></th>
       <th><center>Email<center></th>
-      <th><center>Edit Profile</center></th>
-      <th><center>Order</center></th>
-      <th><center>Detail Order</center></th>
-      <th><center>Delete</center></th>
+      <th><center>Detail<center></th>
+
     </tr>
 <% userData.forEach(data =>{ %>
     <tr>
@@ -51,10 +50,8 @@
       <td><%=data.telp%></td>
       <td><%=data.alamat%></td>
       <td><%=data.email%></td>
-      <td><a href="/user/edit/<%=data.id%>"><button type="button" class="btn btn-warning" name="Edit">EDIT</button></a></td>
-      <td><a href="/user/order/<%=data.id%>"><button type="button" class="btn btn-primary" name="Edit">Order</button></a></td>
-      <td><a href="/user/review/<%=data.id%>"><button type="button" class="btn btn-success" name="Edit">Detail</button></a></td>
-      <td><a href="/user/delete/<%=data.id%>"><button type="button" class="btn btn-warning" name="Edit">Delete</button></a></td>
+      <td><a href="/admin/listuser/detail/<%=data.id%>"><button type="button" class="btn btn-success" name="Edit">Detail</button></a></td>
+
       </tr>
 <%  }) %>
     </table>

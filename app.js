@@ -9,10 +9,12 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended : true}))
 
 const stuffRoute = require("./router/stuffRouter")
-app.use("/stuff", stuffRoute)
+app.use("/admin/stuff", stuffRoute)
 
-const clients = require('./router/clientRouter')
-app.use('/client', clients);
+// const clients = require('./router/clientRouter')
+// app.use('/client', clients);
+const listRoute = require("./router/listRouter")
+app.use("/admin/listuser", listRoute)
 
 const detailOrders = require('./router/detailOrder')
 app.use('/detailorder', detailOrders)
